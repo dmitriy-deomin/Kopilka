@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main"
+    android:background="@drawable/gnom"
+    android:keepScreenOn="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+
+        <TextView android:text="Копилка" android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="6dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Все игры"
+            android:id="@+id/button_dosug"
+            android:background="@drawable/button_fon_logo"
+            android:textSize="10dp"
+            android:onClick="Dosug"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статистика"
+            android:id="@+id/button_stat"
+            android:background="@drawable/button_fon_logo"
+            android:textSize="10dp"
+            android:onClick="Hide_Shou" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Справка"
+            android:id="@+id/button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="Help"
+            android:background="@drawable/button_fon_logo"
+            android:textSize="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:id="@+id/statistika"
+        android:background="@android:color/holo_green_dark"
+        android:alpha="0.7"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Время"
+                    android:id="@+id/textView2"
+                    android:textSize="18dp"
+                    android:minWidth="100dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="60 сек"
+                    android:id="@+id/textView_vrema"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Заработал"
+                    android:id="@+id/textView4"
+                    android:textSize="18dp"
+                    android:minWidth="100dp"
+                    android:maxWidth="100dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 копейка"
+                    android:id="@+id/textView_boblo"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Аккаунт :"
+                    android:id="@+id/textView9"
+                    android:textSize="13dp"
+                    android:minWidth="100dp"
+                    android:maxWidth="100dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="имя"
+                    android:id="@+id/textView_phone"
+                    android:textSize="13dp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Вывести"
+                android:id="@+id/button_boblo_snat"
+                android:background="@drawable/button_fon_logo"
+                android:onClick="vivod_deneg"
+                android:textColor="#9fa271" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/statistika">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/menu_game"
+            android:background="@android:color/holo_green_dark"
+            android:alpha="0.7"
+            android:divider="@drawable/abc_list_longpressed_holo"
+            android:visibility="visible"
+            android:layout_margin="20dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вопросник"
+                android:id="@+id/button_game1"
+                android:onClick="Game1"
+                android:background="@drawable/button_fon_logo"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Крестики-нолики"
+                android:id="@+id/button_game2"
+                android:onClick="Game2"
+                android:background="@drawable/button_fon_logo"
+                android:textColor="@android:color/black"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2048"
+                android:id="@+id/button_game3"
+                android:onClick="Game3"
+                android:background="@drawable/button_fon_logo"
+                android:textColor="@android:color/black"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Яркость"
+                android:id="@+id/button_svet_regulator"
+                android:onClick="svet"
+                android:background="@drawable/button_fon_logo"
+                android:textColor="@android:color/black"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/Voprosnik"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/holo_blue_light"
+                android:minWidth="200dp"
+                android:minHeight="200dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Вопроc"
+                                android:id="@+id/textView8" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Прав ответил"
+                                android:id="@+id/textView7" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:id="@+id/textView_game1_size_voprosi" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:id="@+id/textView_game1_good_otvet" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:text="X"
+                        android:id="@+id/button_close_game1"
+                        android:background="@drawable/button_fon_logo"
+                        android:gravity="center"
+                        android:nestedScrollingEnabled="false"
+                        android:onClick="Otvet_game1" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Вопрос номер 1"
+                    android:id="@+id/textView_ava_vopros"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_otvet"
+                    android:hint="ответ"
+                    android:imeOptions="actionSend"
+                    android:gravity="center" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Пропустить"
+                    android:id="@+id/button_next_vopros"
+                    android:background="@drawable/button_fon_logo"
+                    android:onClick="Game1_propustit" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ok"
+                    android:id="@+id/button_vopros_ok"
+                    android:onClick="Otvet_game1"
+                    android:background="@drawable/button_fon_logo" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Tik_tak_toe"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@android:drawable/alert_dark_frame">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1/1"
+                        android:id="@+id/button_game2_regim_igri"
+                        android:onClick="Game2"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Крестики - нолики"
+                        android:id="@+id/textView_game2_info"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Restart"
+                        android:id="@+id/button_game2_restart"
+                        android:onClick="Game2" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X"
+                        android:id="@+id/button_game2_close"
+                        android:onClick="Game2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik1"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik2"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik3"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik4"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik5"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik6"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik7"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik8"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/button_tik9"
+                        android:onClick="Game2"
+                        android:layout_margin="2dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/game3_loaut"
+            android:visibility="gone">
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/webView"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>
